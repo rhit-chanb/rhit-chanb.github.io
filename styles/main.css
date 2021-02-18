@@ -1,12 +1,76 @@
+:root {
+	--white-color: 224, 236, 255; /* #FCED7E, a sunny yellow */
+  }
 body {
     background: #DDDDDD;
+	display: grid;
+	grid-template-columns: 15em 1fr;
+	grid-template-rows: auto 1fr auto;
+	gap: 0px 0px;
+	grid-template-areas:
+	  "head main"
+	  "nav main"
+	  "nav .";
+	  margin: 0;
+	padding: 1.5rem;
+	background-image: url("https://i.imgur.com/QTWSJgi.png");
 }
 
 .navbar {
-    background-color: #800000;
+    background-color: #00d9ff;
     color: white;
+	grid-area: nav;
+	height: 25vw;
 }
 
 .page-container {
     margin-top: 75px;
+	grid-area : main;
+	padding: 0 1rem;
+	background-color: rgba(var(--white-color), 0.6);
 }
+
+body > nav ul {
+	margin-top: 0;
+	padding-left: 1em;
+	list-style-type: "+";
+  }
+
+body > nav ul li {
+	padding-left: 0.5em;
+	font-size: 2em;
+  }
+body > nav > h2 {
+	padding-left: 0.5em;
+	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+#mainPage div {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#mainPage h5 {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#mainPage ul {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#mainPage ol {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#mainPage h3 {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media only screen and (max-width: 36rem) {
+	body {
+	  grid-template-rows: auto auto 1fr auto;
+	  grid-template-areas:
+		"head head"
+		"nav nav"
+		"main main"
+		"foot foot";
+	}
+
+	.navbar {
+		height: 45vw;
+	}
+  }
